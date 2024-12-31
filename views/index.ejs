@@ -1,0 +1,21 @@
+<%- include("partials/header.ejs") %>
+
+<body> 
+  <% if (locals.name) { %>
+    <script>alert("Thanks for you time 🙂");</script>
+  <% } %>
+    
+  <div class="sand-background pt-2" >
+    <h1 class="theborder" style="font-size: 50px; padding-top: 3%; padding-bottom: 3%;" >Welcome,</h1>
+    <h1 class="theborder" style="font-size: 50px; font-weight: bold; padding-top: 3%; padding-bottom: 3%; " >to the BookRatingSite</h1>
+    <h1 class="theborder " style="font-size: 50px; padding-top: 3%; padding-bottom: 3%;" >for those who love reading</h1>
+
+  </div>
+  <div class="sand-background" >
+    <h1 class="theborder animate-charcter" style="font-size: 50px; font-weight: bold; padding-top: 3%; padding-bottom: 3%;" >Go to MyBOOKS page!</h1>
+  </div>
+  <script src="index.js" charset="UTF-8"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+<%- include("partials/footer.ejs") %>

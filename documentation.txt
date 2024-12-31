@@ -1,0 +1,24 @@
+-Welcome to this Project.
+Its a project using APIs call to request data from a server, conserning books informations,
+Then we save the data in the database, through the call of function theappicall(), 
+which is called only once. After we display the data from the database in the about.ejs, 
+and we can add a new book title, or we can modify one.
+
+-To run you have to run some lines:
+
+npm init
+npm i ejs
+npm i express
+npm i body-parser
+npm i pg
+npm i axios
+
+go to package.json and add   "type": "module"  so we can easily access the packages
+
+to run you have to create your own databasae with the aprpopriate columns
+and insert your db information at the start
+
+to run :
+node index.js (or nodemon index.js if you have installed it)
+
+Have Fun!

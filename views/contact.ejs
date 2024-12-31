@@ -1,0 +1,17 @@
+
+<%- include("partials/header.ejs") %>
+
+<body  class="sand-background" >
+  <div class="sand-background theborder my-2" style="padding-bottom: 40px;">
+  <h1>Contact Me 😉</h1>
+  <form action="/submit" method="post">
+    <input name="fname" type="text" class="feedback-input" placeholder="Name" />
+    <input name="femail" type="text" class="feedback-input" placeholder="Email" />
+    <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+    <input style="color: #e6e5df; background-color: rgb(255, 82, 57); margin-top: 30px;
+                  font-family: PT Mono;" type="submit" value="SUBMIT"/>
+  </form>
+</div>
+</body>
+
+<%- include("partials/footer.ejs") %>

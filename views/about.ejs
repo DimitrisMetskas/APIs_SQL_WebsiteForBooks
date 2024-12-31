@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") %>
+
+<body  class="sand-background" >
+
+<div class="mt-2" >
+  <h1 class="theborder" style="font-size: 50px; font-weight: bold; padding-top: 3%; padding-bottom: 3%;">Book List:</h1>
+
+  <div>
+      <% for(let item of listItems){ %>
+
+        <p id="title<%=item.id%>" style="background-color:rgb(255, 82, 57) ; color: #e6e5df; font-size: 30px; font-weight: bold;">
+          Tittle : <%= item.title %> </p>
+
+        <p style="font-size: 20px;">The Author : <%= item.author %> </p>
+        <p style="font-size: 20px;">The Average rating of the book: <%= item.avg_rating %> </p>
+        <p style="font-size: 20px;">The subject : <%= item.subject %> </p>
+        <p style="font-size: 20px;">The language : <%= item.language %> </p>
+
+
+        <form  class="edit" action="/edit" method="post">
+          <input type="hidden" name="updatedItemId" value="<%= item.id %>">
+          <input id="input<%=item.id%>" type="text" name="updatedItemTitle" value="<%= item.title %>" autocomplete="off"
+            autofocus="true" hidden="true" />
+          <button style="font-size: 20px; font-weight: bold;" id="done<%=item.id%>" class="edit" type="submit" hidden>DONE<img class="icon"
+          src="/assets/icons/check-solid.svg" alt="tick image"></button>
+        </form>
+        <button style="text-align: center; font-size: 20px;font-weight: bold;" id="edit<%=item.id%>" class="edit" onclick="handler('<%=item.id%>')">EDIT TITLE<img class="icon"
+            src="/assets/icons/pencil-solid.svg" alt="pencil image"></button>
+      </div>
+      <form style="padding-bottom: -100px;" action="/delete" method="post">
+        <!-- parakato to onchange="this.form.submit()" ousistiaka me to poy patietai to koympi kanei submit me post apo tin methodo parapano -->
+        <p style="font-size: 20px; font-weight: bold;">DELETE POST
+        <input type="checkbox" onchange="this.form.submit()" name="deleteItemId" value="<%= item.id %>"></p>
+      </form>
+
+      <% } %>
+
+        <form class="item" action="/add" method="post">
+          <input type="text" name="newItem" placeholder="New Item" autocomplete="off" autofocus="true" />
+          <button class="add" type="submit" name="list" value=<%=listTitle %> >+</button>
+        </form>
+  </div>
+
+  <script>
+    function handler(id) {
+      //parakato krybontai ta duo prota line 15 kai 26 kai emfanizontai ta alla 2 line 21 kai 23
+      document.getElementById("title" + id).setAttribute("hidden", true)
+      // document.getElementById("title" + id).setAttribute("hidden", true)
+      // document.getElementById("title" + id).setAttribute("hidden", true)
+      // document.getElementById("title" + id).setAttribute("hidden", true)
+      // document.getElementById("title" + id).setAttribute("hidden", true)
+
+      document.getElementById("edit" + id).setAttribute("hidden", true)
+      document.getElementById("done" + id).removeAttribute("hidden")
+      document.getElementById("input" + id).removeAttribute("hidden")
+    };
+  </script>
+
+
+  <%- include("partials/footer.ejs") %>
+  
